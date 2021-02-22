@@ -29,15 +29,15 @@ extern int read_xtc_n_frames(char *fn, int *n_frames, int *est_nframes,
 
 /* XTC header fields until coord floats: *** only for trajectories of less than
  * 10 atoms! ***  */
-/* magic natoms step time DIM*DIM_box_vecs natoms */
-#define XTC_SHORTHEADER_SIZE (20 + DIM * DIM * 4)
+/* magic natoms step time XDIM*XDIM_box_vecs natoms */
+#define XTC_SHORTHEADER_SIZE (20 + XDIM * XDIM * 4)
 /* Short XTCs store each coordinate as a 32-bit float. */
 #define XTC_SHORT_BYTESPERATOM 12
 /* XTC header fields until frame bytes: *** only for trajectories of more than 9
  * atoms! ***  */
-/* magic natoms step time DIM*DIM_box_vecs natoms prec DIM_min_xyz DIM_max_xyz
+/* magic natoms step time XDIM*XDIM_box_vecs natoms prec XDIM_min_xyz XDIM_max_xyz
  * smallidx */
-#define XTC_HEADER_SIZE (DIM * DIM * 4 + DIM * 2 + 46)
+#define XTC_HEADER_SIZE (XDIM * XDIM * 4 + XDIM * 2 + 46)
 
 #ifdef __cplusplus
 }
